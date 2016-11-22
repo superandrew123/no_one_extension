@@ -6,18 +6,24 @@
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>No One extension</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
       }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
+      div#main-content {
+        min-width: 300px;
+      }
+      p {
+        margin: 0 0 5px;
+      }
+      p.context {
+        text-decoration: underline;
+      }
+      p.name {
+        margin-left: 10px;
+        font-size: 12px;
       }
     </style>
 
@@ -27,11 +33,13 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/noex.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
+    <div id="main-content">
+    </div>
   </body>
 </html>
 
