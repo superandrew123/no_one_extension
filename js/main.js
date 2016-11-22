@@ -1,6 +1,18 @@
-NOEx.getNames(['data/people.json']);
 
-$(document).ready(() => {
-  NOEx.showNames();
+var NOExPromise = Promise.resolve(
+  $.ajax({
+    method: 'get', 
+    dataType: 'json', 
+    url: chrome.extension.getURL('data/people.json')
+  })
+);
+NOExPromise.then(function(data){
+  NOEx.loadData(data);
+  NOEx.removeNames();
 });
-debugger;
+// NOEx.getNames([chrome.extension.getURL('data/people.json')]);
+
+// $(document).ready(() => {
+  // NOEx.showNames();
+  // NOEx.removeNames();
+// });

@@ -4,19 +4,6 @@ NOEx = {
   contexts: [],
   names: [],
 
-  getNames: function(json_paths){
-    for(var i = 0; i < json_paths.length; i++){
-      $.ajax({
-        method: 'get', 
-        dataType: 'json', 
-        url: json_paths[i],
-        success: function(response){
-          NOEx.loadData(response);
-        }
-      });
-    }
-  },
-
   loadData: function(data){
     NOEx.contexts.push(data);
     NOEx.names = NOEx.names.concat(data.names);
@@ -32,5 +19,10 @@ NOEx = {
       }
     }
     $("#main-content").html(nameHtml);
+  },
+
+  removeNames: function(){
+
+    debugger;
   }
 }
